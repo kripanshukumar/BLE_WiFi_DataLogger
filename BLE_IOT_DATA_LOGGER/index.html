@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <!-- Title Page-->
+    <title>Home</title>
+
+    <style type="text/css">
+                
+        /* ==========================================================================
+           #FONT
+           ========================================================================== */
+        .font-robo {
+          font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+        }
+
+        /* ==========================================================================
+           #GRID
+           ========================================================================== */
+        .row {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+        }
+
+        .row-space {
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -moz-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+        }
+
+        .col-2 {
+          width: -webkit-calc((100% - 60px) / 2);
+          width: -moz-calc((100% - 60px) / 2);
+          width: calc((100% - 60px) / 2);
+        }
+
+        @media (max-width: 767px) {
+          .col-2 {
+            width: 100%;
+          }
+        }
+
+        /* ==========================================================================
+           #BOX-SIZING
+           ========================================================================== */
+        /**
+         * More sensible default box-sizing:
+         * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+         */
+        html {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        * {
+          padding: 0;
+          margin: 0;
+        }
+
+        *, *:before, *:after {
+          -webkit-box-sizing: inherit;
+          -moz-box-sizing: inherit;
+          box-sizing: inherit;
+        }
+
+        /* ==========================================================================
+           #RESET
+           ========================================================================== */
+        /**
+         * A very simple reset that sits on top of Normalize.css.
+         */
+        body,
+        h1, h2, h3, h4, h5, h6,
+        blockquote, p, pre,
+        dl, dd, ol, ul,
+        figure,
+        hr,
+        fieldset, legend {
+          margin: 0;
+          padding: 0;
+        }
+
+        /**
+         * Remove trailing margins from nested lists.
+         */
+        li > ol,
+        li > ul {
+          margin-bottom: 0;
+        }
+
+        /**
+         * Remove default table spacing.
+         */
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+        }
+
+        /**
+         * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+         *    on fieldsets.
+         */
+        fieldset {
+          min-width: 0;
+          /* [1] */
+          border: 0;
+        }
+
+        button {
+          outline: none;
+          background: none;
+          border: none;
+        }
+
+        /* ==========================================================================
+           #PAGE WRAPPER
+           ========================================================================== */
+        .page-wrapper {
+          min-height: 100vh;
+        }
+
+        body {
+          font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 400;
+        }
+
+        h1 {
+          font-size: 36px;
+        }
+
+        h2 {
+          font-size: 30px;
+        }
+
+        h3 {
+          font-size: 24px;
+        }
+
+        h4 {
+          font-size: 18px;
+        }
+
+        h5 {
+          font-size: 15px;
+        }
+
+        h6 {
+          font-size: 13px;
+        }
+
+        /* ==========================================================================
+           #BACKGROUND
+           ========================================================================== */
+        .bg-blue {
+          background: #979FB0;
+        }
+
+        /* ==========================================================================
+           #SPACING
+           ========================================================================== */
+        .p-t-100 {
+          padding-top: 100px;
+        }
+
+        .p-t-20 {
+          padding-top: 20px;
+        }
+
+        .p-b-100 {
+          padding-bottom: 100px;
+        }
+
+        /* ==========================================================================
+           #WRAPPER
+           ========================================================================== */
+        .wrapper {
+          margin: 0 auto;
+        }
+
+        .wrapper--w680 {
+          max-width: 680px;
+        }
+
+        /* ==========================================================================
+           #BUTTON
+           ========================================================================== */
+        .btn {
+          line-height: 40px;
+          display: inline-block;
+          padding: 0 25px;
+          cursor: pointer;
+          font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+          color: #fff;
+          -webkit-transition: all 0.4s ease;
+          -o-transition: all 0.4s ease;
+          -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        .btn--radius {
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.25);
+          -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn--green {
+          background: #57b846;
+        }
+
+        .btn--green:hover {
+          background: #4dae3c;
+        }
+
+        /* ==========================================================================
+           #DATE PICKER
+           ========================================================================== */
+        td.active {
+          background-color: #2c6ed5;
+        }
+
+        input[type="date" i] {
+          padding: 14px;
+        }
+
+        .table-condensed td, .table-condensed th {
+          font-size: 14px;
+          font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+          font-weight: 400;
+        }
+
+        .daterangepicker td {
+          width: 40px;
+          height: 30px;
+        }
+
+        .daterangepicker {
+          border: none;
+          -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          display: none;
+          border: 1px solid #e0e0e0;
+          margin-top: 5px;
+        }
+
+        .daterangepicker::after, .daterangepicker::before {
+          display: none;
+        }
+
+        .daterangepicker thead tr th {
+          padding: 10px 0;
+        }
+
+        .daterangepicker .table-condensed th select {
+          border: 1px solid #ccc;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          font-size: 14px;
+          padding: 5px;
+          outline: none;
+        }
+
+        /* ==========================================================================
+           #FORM
+           ========================================================================== */
+        input {
+          outline: none;
+          margin: 0;
+          border: none;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          width: 100%;
+          font-size: 14px;
+          font-family: inherit;
+        }
+
+        .input-group {
+          position: relative;
+          margin-bottom: 30px;
+          border-bottom: 2px solid #ccc;
+        }
+
+        .input-icon {
+          position: absolute;
+          font-size: 18px;
+          color: #ccc;
+          right: 8px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+
+        .input--style-1 {
+          padding: 9px 0;
+          color: #666;
+        }
+
+        .input--style-1::-webkit-input-placeholder {
+          /* WebKit, Blink, Edge */
+          color: #555;
+        }
+
+        .input--style-1:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          color: #555;
+          opacity: 1;
+        }
+
+        .input--style-1::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: #555;
+          opacity: 1;
+        }
+
+        .input--style-1:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: #555;
+        }
+
+        .input--style-1:-ms-input-placeholder {
+          /* Microsoft Edge */
+          color: #555;
+        }
+
+        /* ==========================================================================
+           #SELECT2
+           ========================================================================== */
+        .select--no-search .select2-search {
+          display: none !important;
+        }
+
+        .rs-select2 .select2-container {
+          width: 100% !important;
+          outline: none;
+        }
+
+        .rs-select2 .select2-container .select2-selection--single {
+          outline: none;
+          border: none;
+          height: 34px;
+        }
+
+        .rs-select2 .select2-container .select2-selection--single .select2-selection__rendered {
+          line-height: 34px;
+          padding-left: 0;
+          color: #555;
+        }
+
+        .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow {
+          height: 32px;
+          right: 4px;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -moz-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -moz-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+
+        .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow b {
+          display: none;
+        }
+
+        .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow:after {
+          font-family: "Material-Design-Iconic-Font";
+          content: '\f2f9';
+          font-size: 18px;
+          color: #ccc;
+          -webkit-transition: all 0.4s ease;
+          -o-transition: all 0.4s ease;
+          -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+        }
+
+        .rs-select2 .select2-container.select2-container--open .select2-selection--single .select2-selection__arrow::after {
+          -webkit-transform: rotate(-180deg);
+          -moz-transform: rotate(-180deg);
+          -ms-transform: rotate(-180deg);
+          -o-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+        }
+
+        .select2-container--open .select2-dropdown--below {
+          border: none;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          border: 1px solid #e0e0e0;
+          margin-top: 5px;
+          overflow: hidden;
+        }
+
+        /* ==========================================================================
+           #TITLE
+           ========================================================================== */
+        .title {
+          margin-bottom: 37px;
+        }
+
+        /* ==========================================================================
+           #CARD
+           ========================================================================== */
+        .card {
+          overflow: hidden;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          background: #fff;
+        }
+
+        .card-shadow {
+          -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        }
+
+
+
+        .card-1 .card-heading {
+          padding-top: 210px;
+        }
+
+        .card-1 .card-body {
+          padding: 0 90px;
+          padding-top: 55px;
+          padding-bottom: 65px;
+        }
+
+        .credit{
+            margin-top: 50px;
+            text-align: center;
+          } 
+
+        a{
+          color: black;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        #connect{
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 767px) {
+          .card-1 .card-body {
+            padding: 0 40px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+          }
+          .p-t-100 {
+            padding-top: 0px;
+          }
+          .p-b-100 {
+            padding-bottom: 0px;
+          }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+            </div>
+            <div class="card card-1 card-shadow">
+                <div class="card-body card-shadow">
+                    <h2 class="title">Device Configuration</h2>
+                            <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">   
+                                  <label class="input--style-1">FIRMWARE VERSION: </label>  
+                                  <input class="input--style-1" type="text" placeholder="" disabled id="WFNM1">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                  <label class="input--style-1">DEVICE ID: </label>
+                                  <input class="input--style-1" type="text" placeholder="" disabled id="WFPW1">
+                                </div>
+                            </div>
+                        </div>               
+                        
+                        <div class="row row-space">
+                            <div class="col-2">
+                            <div class="input-group">
+                              <label class="input--style-1">MAC ID: </label>
+                                <input class="input--style-1" type="text" placeholder="" disabled id="WFPW12">
+                            </div>
+                        </div>
+                        <div class="col-2">       
+                            <div class="input-group">
+                              <label class="input--style-1">CUSTOMIZED DEVICE ID: </label>
+                                <input class="input--style-1" type="text" placeholder="" id="DEVID">
+                            </div>
+                          </div>
+                        </div>  
+
+                        <h2 class="title">Connect to WIFI (Internet)</h2>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                  <label class="input--style-1">WIFI SSID: </label>
+                                    <input class="input--style-1" type="text" placeholder="" id="WFNM">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                  <label class="input--style-1">WIFI PASSWORD: </label>
+                                    <input class="input--style-1" type="password" placeholder="" id="WFPW">
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <center>
+                            <button class="btn btn--radius btn--green" id="connect" onclick="Save();"><h4>Connect<h4></button>
+                        </center>
+                        <h2 class="title">Cloud Communication (Internet)</h2>
+                        
+                        <div class="input-group">
+                          <label class="input--style-1">CLOUD URL: </label>
+                            <input class="input--style-1" type="text" placeholder="" id="WCURL">
+                        </div>
+                       
+                        <div class="input-group">
+                          <label class="input--style-1">CLOUD KEY/PASSWORD: </label>
+                            <input class="input--style-1" type="text" placeholder="" id="WPAS">
+                        </div>
+
+                        <h2 class="title">Hotspot Configuration</h2>
+                        
+                        <div class="input-group">
+                          <label class="input--style-1">ACCESS POINT PASSWORD: </label>
+                            <input class="input--style-1" type="password" placeholder="" id="APPW">
+                        </div>
+                            
+
+                        <div class="p-t-20">
+                            <center>
+                                <button class="btn btn--radius btn--green" id="save"  onclick="Save();"><h4>Save Configuration</h4></button>
+                            </center>
+                        </div>
+                        <p class="credit">
+                        <a href="https://iotegral.in/" style="font-size: 14px;">Made with <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFDUlEQVRYR81Xe0xTZxQ/F4hsvLwS3UA3WhhQRlxah7slukgZJprpQp0mY5mRmmzLgBFomeDMwApmChgoZmAMZituUfZgYNQFE4XLEheLAwt7iMB4jPEayO4Aydigdzl3vd29bWkLyeK+P9o03/nO+Z1zfudRAh7yIR6yffh/AjCpqFTwAjW5ZZs6IPYZxsvXl5lqvs7Mft/Z4O2zaNh8ve13Z5G7+cIWiY9lQeMni8kOTkjiRP6anGBmf/iOnuv+0Ug1326xfyeKwLfb41YvWHwMkrRszdqdu8AnIJCXHwAA6fzYCAyd/YC539KkiW82XRIqQ9DBqiTDY8l7ySBFnAO+sS9qYaiyzEDRt7XCSxGAtpd31MuKT6t9Q0JhsvEqjNXVwp/jo0Bu3QZB8jjgQQmVIWjv4PV6SWZO9prnE+BBbzeM19XCtLmdexsofxbW7z/IrI6jyGlzG9zVZmTH06YKHoQNAHoQlqE1opGe/FyY6Wh38GLV46EgydACGkJlgxWltHdAICnJ1En9o58mh2uqYbjmnFNeh6VrIWRfCgxWlsF43acKZXNrBwraAHTlZfXLThqkVgGXxbFut5oJ171LWoUYACD7igth8tpVl+9iyqrALzIa2pO3NyibWvfYAJgSKXlkwft00GaK7HhVDYsPZnlFnHJnWtfu2AUReQXMwsw0dOnSybmfetxWNKYyuqgUuvMPgez4Kc557uOWSpmluPil4Y/hX5h7hzJFnrnSigrnenu4XHt6qCYTWFPFpYEDYFJRR6lmk95VDj014E5OfqEe5sdG4Z4uTYVlKQKA7P65qtydDvv7JdPkTNGSAOQX6/WIrEuXvhwAyzKOijEFVkcFKUik5OG5+eZ1O3dD20tJQhI6A7Nso7wSnoT9ZSeYiJwja0RlOHD6VL8kM0fqggcrNswD4MuwU5NijKv76qAIADaimPIqI7bRjtf2MPOjI87Kb8UgrGXLVcDgeaN0a9M3gyIA+INvRthOu7Rp7lLhMVewg26s/hgWZ2fgbtZbhk2fXbbNA9EswIa0IfV184bUN5iJxitkf0nRcjiA0cEjipy3fwBEFZUARrb7vXfMMyZaJZymDvsANqWN1ecN/pHRfN/2xNMlUxNVWMLNDvsZwCt1upC07X3xI9nJcg2C8KTHCxCKgITn5gNW1kTjFegvLtIo6dYae2+W3Ig6Duy7E1v5oQJ3AuzdzM2vnTUgYci5nYEX4qcfGh8oLnTYA1xGAC9xzj8as4mOPlHGgXATCZFxq+ccj/pKjxvjm0xcyTk7LndCBAH+wbT8kzoORO+xI8xUyw0hyUTEQ8JF5BVwOUfPh86dsdX7igDwkVglkRkjDh9VIyfs5oUt51hqyHaUseZcr6Rbj7ljsMdbsZCYuA3h1mTdGxi/p6LImPIz3A6JbfbXy5f0wrXLFQiPAaAS7JbheflGZDYuqAjikSfCGKnuMABBkIMVpQP3b1xT8+uWO+8dOqEnD1oTn0sISTnQ8OSbb9u4gGD6iovo3zo7NXyL9UTXigDgI9z/ydjYhtBX9itwhI99fsGwODWiX+r/gtsU3EpUJnuxFhUQoBAKs0BgXdtqGwDsO55Hw4kAlub1sgTBgAXMQEDDvytZInUHQGzc+sCVAf7OExnHILDAdUYbCTG3FvAiCZYVReGfPLEk60VICZYl0QP8dpdjzlMAYIFgCAuLjYo7LEGYCWAHHP4XuFP4X93/DW5bST8h5RjeAAAAAElFTkSuQmCC" style="width: 20px;height: 20px;vertical-align: middle;"/> By 
+            XCONICS Innovations Pvt.Ltd.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function GetURL(url){
+        var http = new XMLHttpRequest();
+        http.onreadystatechange = function() {
+            if (http.readyState == 4) {  //The fetch operation is complete
+                if (http.status == 200) {
+                    var parms = http.responseText.split(';');
+
+
+                    document.getElementById("WFNM1").value = parms[0];
+                    document.getElementById("WFPW1").value = parms[1];
+                    document.getElementById("WFPW12").value = parms[2];
+                                                                        
+                    document.getElementById("WFNM").value = parms[3];
+                    document.getElementById("WFPW").value = parms[4];
+                    document.getElementById("APPW").value = parms[5];
+                    document.getElementById("WCURL").value = parms[6];
+                    document.getElementById("WPAS").value = parms[7];
+                    document.getElementById("DEVID").value = parms[8];
+                }else{
+                    alert("Error displaying configuration " + http.responseText);
+                }
+            }
+        };
+            http.open("GET", url, true);
+            http.send();
+        }
+
+        function getElementValue(string){
+          if(document.getElementById(string).value === ''){
+            return document.getElementById(string).placeholder;
+          }
+          else{
+            return document.getElementById(string).value;
+          }
+        }
+                
+        function Save()
+        {
+            var str ="";
+            str = "DEVID=" + getElementValue("DEVID")
+                  + "&WFNM=" + getElementValue("WFNM")
+                  + "&WFPW=" + getElementValue("WFPW")
+                  + "&WCURL=" + getElementValue("WCURL")
+                  + "&WPAS=" + getElementValue("WPAS")
+                  + "&APPW=" + getElementValue("APPW");
+            console.log(str);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "update_credentials", true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+              str = this.responseText;
+            };
+            xhr.send(str);
+            if(location.origin !== str){
+              console.log(str);
+              console.log(location.origin);
+              location.assign(str);
+            }
+        }
+
+        function load_params(){
+          console.log("Running load_params: ");
+          var xhr = new XMLHttpRequest();
+          xhr.timeout = 2000;
+          xhr.onload = function () {
+            var rspns = "";
+            rspns = this.responseText;
+            if(xhr.status === 200){
+              console.log("Successful");
+              console.log("Data from Load_Param");
+              console.log(rspns);
+              let arr = [0,0,0,0,0,0,0,0,0];
+              arr[0] = rspns.indexOf('\n');
+              for(var i =1; i< 9; i++){
+                  arr[i] = rspns.indexOf('\n',arr[i-1]+1);
+              }
+              var frm_ver = rspns.substring(0,arr[0]);
+              var dev_id = rspns.substring(arr[0] + 1, arr[1]);
+              var mac_id = rspns.substring(arr[1] + 1, arr[2]);
+              var cus_dev_id = rspns.substring(arr[2] + 1, arr[3]);
+              var ssid = rspns.substring(arr[3] + 1, arr[4]);
+              var password = rspns.substring(arr[4] + 1, arr[5]);
+              var URL = rspns.substring(arr[5] + 1, arr[6]);
+              var KEY = rspns.substring(arr[6] + 1, arr[7]);
+              var AP_PSWD = rspns.substring(arr[7] + 1, rspns.length);
+              document.getElementById("WFNM1").value = frm_ver;
+              document.getElementById("WFPW1").value = dev_id;
+              document.getElementById("WFPW12").value = mac_id;
+
+              document.getElementById("DEVID").placeholder = cus_dev_id;
+              document.getElementById("WFNM").placeholder = ssid;
+              document.getElementById("WFPW").placeholder = password;
+              document.getElementById("WCURL").placeholder = URL;
+              document.getElementById("WPAS").placeholder = KEY;
+              document.getElementById("APPW").placeholder = AP_PSWD;
+              console.log(arr);
+            }
+            else{
+              console.log("Failed");
+            } 
+          }
+          xhr.open("GET", "get_params", true);
+          xhr.send();
+        }
+        //GetURL("/read");
+        //setInterval(function () {
+        //    load_params();
+        //}, 2000);
+        load_params();
+        
+</script>
+
+</body>
+
+</html>
+<!-- end document-->
